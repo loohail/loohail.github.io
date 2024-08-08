@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beacon Ethiopia: Your Guide to Professional Success</title>
+    <meta name="description" content="Discover expert advice on resume writing, job hunting, and building a stellar portfolio.">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1em;
+            border-radius: 5px;
+        }
+        nav {
+            background-color: #34495e;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+        nav a:hover {
+            background-color: #2c3e50;
+            border-radius: 3px;
+        }
+        .post {
+            background-color: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .post h2 {
+            color: #2c3e50;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            border-radius: 5px;
+        }
+        .hidden-content {
+            display: none;
+        }
+		#countdown {
+        color: white; /* Change 'red' to any color you prefer */
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Beacon Ethiopia</h1>
+        <p>ለእርስዎ ስራ ፈላጊ</p>
+    </header>
+    
+    <nav>
+        <span id="countdown">5</span>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h2>5 Strategies to Make Your Resume Stand Out</h2>
+            <p>In today's competitive job market, having a resume that catches the eye of recruiters is crucial. Here are five proven strategies to make your resume shine:</p>
+            <ol>
+                <li>Tailor your resume to the job description</li>
+                <li>Use action verbs to describe your achievements</li>
+                <li>Quantify your accomplishments with data</li>
+                <li>Include relevant keywords for ATS optimization</li>
+                <li>Create a clean, professional design</li>
+            </ol>
+            <div class="hidden-content">
+                <p>Full article content here...</p>
+            </div>
+            <span class="cta-button" onclick="toggleContent(this)">Read More</span>
+        </article>
+
+        <article class="post">
+            <h2>Building a Portfolio That Showcases Your Skills</h2>
+            <p>Whether you're a designer, writer, or developer, a well-crafted portfolio can be your ticket to landing your dream job. Learn how to create a portfolio that effectively demonstrates your expertise and catches the attention of potential employers.</p>
+            <div class="hidden-content">
+                <p>Full article content here...</p>
+            </div>
+            <span class="cta-button" onclick="toggleContent(this)">Read More</span>
+        </article>
+
+        <article class="post">
+            <h2>Mastering the Art of Networking in the Digital Age</h2>
+            <p>Networking remains a crucial aspect of career development, but the landscape has changed. Discover how to leverage social media, online events, and digital platforms to build meaningful professional connections and open new career opportunities.</p>
+            <div class="hidden-content">
+                <p>Full article content here...</p>
+            </div>
+            <span class="cta-button" onclick="toggleContent(this)">Read More</span>
+        </article>
+
+        <article class="post">
+            <h2>Navigating the Modern Job Search: Tips and Tricks</h2>
+            <p>The job search process has evolved significantly in recent years. From AI-powered applicant tracking systems to video interviews, job seekers need to adapt to new technologies and strategies. Here are some essential tips for conducting an effective job search in today's digital landscape:</p>
+            <ul>
+                <li>Optimize your online presence, especially on LinkedIn</li>
+                <li>Use job search engines and company websites efficiently</li>
+                <li>Prepare for virtual interviews and assessments</li>
+                <li>Follow up strategically after applying and interviewing</li>
+                <li>Consider freelance and remote opportunities</li>
+            </ul>
+            <div class="hidden-content">
+                <p>By mastering these modern job search techniques, you'll be better positioned to find and secure your ideal role in a competitive job market.</p>
+            </div>
+            <span class="cta-button" onclick="toggleContent(this)">Read More</span>
+        </article>
+    </main>
+
+    <script>
+        function toggleContent(button) {
+            const content = button.previousElementSibling;
+            if (content.classList.contains('hidden-content')) {
+                content.classList.remove('hidden-content');
+                button.innerText = 'Read Less';
+            } else {
+                content.classList.add('hidden-content');
+                button.innerText = 'Read More';
+            }
+        }
+
+        function startCountdown() {
+            let countdown = 5;
+            const countdownElement = document.getElementById('countdown');
+            const interval = setInterval(() => {
+                countdown--;
+                countdownElement.innerText = countdown;
+                if (countdown <= 0) {
+                    clearInterval(interval);
+                    countdownElement.innerText = "መልካም ዕድል!";
+                }
+            }, 1000);
+        }
+
+        window.onload = function() {
+            startCountdown();
+
+            // Initialize the Telegram Web App
+            window.Telegram.WebApp.ready();
+            
+            // Optionally set colors
+            window.Telegram.WebApp.setHeaderColor("#2c3e50");
+            window.Telegram.WebApp.setBackgroundColor("#FFFFFF");
+
+            // Optionally expand the Mini App
+            window.Telegram.WebApp.expand();
+
+            // Perform redirection after 6 seconds
+            const urlParams = new URLSearchParams(window.location.search);
+            const redirectUrl = urlParams.get('redirect');
+            if (redirectUrl) {
+                setTimeout(() => {
+                    window.location.href = redirectUrl;
+                }, 6000);
+            }
+        };
+
+        // Add a simple dark mode toggle
+        const toggleDarkMode = () => {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        // Create a button for dark mode toggle
+        const darkModeButton = document.createElement('button');
+        darkModeButton.innerText = 'Toggle Dark Mode';
+        darkModeButton.style.position = 'fixed';
+        darkModeButton.style.bottom = '20px';
+        darkModeButton.style.right = '20px';
+        darkModeButton.style.padding = '10px';
+        darkModeButton.style.backgroundColor = '#2c3e50';
+        darkModeButton.style.color = '#ecf0f1';
+        darkModeButton.style.border = 'none';
+        darkModeButton.style.borderRadius = '5px';
+        darkModeButton.style.cursor = 'pointer';
+
+        darkModeButton.addEventListener('click', toggleDarkMode);
+        document.body.appendChild(darkModeButton);
+
+        // Add dark mode styles
+        const darkModeStyles = `
+            body.dark-mode {
+                background-color: #2c3e50;
+                color: #ecf0f1;
+            }
+            body.dark-mode .post {
+                background-color: #34495e;
+            }
+            body.dark-mode .post h2 {
+                color: #ecf0f1;
+            }
+            body.dark-mode header, body.dark-mode nav, body.dark-mode footer {
+                background-color: #1a252f;
+            }
+        `;
+
+        const styleElement = document.createElement('style');
+        styleElement.textContent = darkModeStyles;
+        document.head.appendChild(styleElement);
+    </script>
+</body>
+</html>
