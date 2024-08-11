@@ -1,355 +1,691 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beacon Ethiopia: Your Guide to Professional Success</title>
-    <meta name="description" content="Discover expert advice on resume writing, job hunting, and building a stellar portfolio.">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9200890573759255"
-     crossorigin="anonymous"></script>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            text-align: center;
-            padding: 1em;
-            border-radius: 5px;
-        }
-        nav {
-            background-color: #34495e;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        nav a {
-            color: #ecf0f1;
-            text-decoration: none;
-            padding: 5px 10px;
-        }
-        nav a:hover {
-            background-color: #2c3e50;
-            border-radius: 3px;
-        }
-        .post {
-            background-color: #fff;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .post h2 {
-            color: #2c3e50;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: #e74c3c;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            cursor: pointer;
-        }
-        .cta-button:hover {
-            background-color: #c0392b;
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            border-radius: 5px;
-        }
-        .hidden-content {
-            display: none;
-        }
-		#countdown {
-        color: white; /* Change 'red' to any color you prefer */
+<html><head><base href="https://beaconethiopia.com/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beacon Ethiopia - Professional Career Advice</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+    --background-color: #ecf0f1;
+    --text-color: #34495e;
+    --card-background: #ffffff;
+    --accent-color: #3498db;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+  }
+
+  * {
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  header {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 1em 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 40%);
+    animation: ripple 15s infinite linear;
+    z-index: 1;
+  }
+
+  @keyframes ripple {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-align: center;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: left 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    z-index: 1000;
+    box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+    overflow-y: auto;
+  }
+
+  nav.open {
+    left: 0;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 70px;
+  }
+
+  nav ul li {
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+  }
+
+  nav ul li a i {
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  nav ul li a:hover {
+    color: var(--secondary-color);
+    transform: translateX(5px);
+  }
+
+  #nav-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+
+  #nav-toggle:hover {
+    background-color: var(--secondary-color);
+    transform: rotate(90deg);
+  }
+
+  .content-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 0 20px;
+    position: relative;
+  }
+
+  main {
+    flex: 1;
+    margin-right: 20px;
+    position: relative;
+  }
+
+  .post {
+    background-color: var(--card-background);
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transform-origin: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .post:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .post-content {
+    padding: 30px;
+  }
+
+  .post h2 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+  }
+
+  .post h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+  }
+
+  .post:hover h2::after {
+    width: 100px;
+  }
+
+  .post-meta {
+    font-size: 0.9em;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  .post-meta .date {
+    margin-right: 15px;
+  }
+
+  .post-excerpt {
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .post-excerpt::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, var(--card-background));
+  }
+
+  .tag {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    margin-right: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+  }
+
+  .btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  .ad-banner {
+    width: 300px;
+    background-color: var(--card-background);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    position: sticky;
+    top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ad-banner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .ad-banner h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+
+  .ad-banner p {
+    margin-bottom: 20px;
+    font-size: 1em;
+  }
+
+  footer {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    text-align: center;
+    padding: 2em;
+    margin-top: 2em;
+    position: relative;
+    overflow: hidden;
+  }
+
+  footer::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 40%);
+    animation: ripple 15s infinite linear;
+    z-index: 1;
+  }
+
+  footer p {
+    position: relative;
+    z-index: 2;
+    font-size: 1em;
+  }
+
+  @media (max-width: 768px) {
+    .content-wrapper {
+      flex-direction: column;
     }
-    </style>
+
+    .ad-banner {
+      width: 100%;
+      margin-top: 20px;
+      position: static;
+    }
+  }
+
+  /* Cool Animation for Posts */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .post {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+  }
+
+  .post:nth-child(1) { animation-delay: 0.1s; }
+  .post:nth-child(2) { animation-delay: 0.2s; }
+  .post:nth-child(3) { animation-delay: 0.3s; }
+  .post:nth-child(4) { animation-delay: 0.4s; }
+  .post:nth-child(5) { animation-delay: 0.5s; }
+  .post:nth-child(6) { animation-delay: 0.6s; }
+  .post:nth-child(7) { animation-delay: 0.7s; }
+  .post:nth-child(8) { animation-delay: 0.8s; }
+  .post:nth-child(9) { animation-delay: 0.9s; }
+  .post:nth-child(10) { animation-delay: 1s; }
+
+  /* Stylish Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--background-color);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+  }
+
+  /* Cool hover effect for nav items */
+  nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+    z-index: -1;
+  }
+
+  nav ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* Glowing effect for header */
+  @keyframes glow {
+    0% { text-shadow: 0 0 5px rgba(255,255,255,0.5); }
+    50% { text-shadow: 0 0 20px rgba(255,255,255,0.5); }
+    100% { text-shadow: 0 0 5px rgba(255,255,255,0.5); }
+  }
+
+  header h1 {
+    animation: glow 3s infinite;
+  }
+
+</style>
 </head>
 <body>
-    <header>
-        <h1>Beacon Ethiopia</h1>
-        <p>ለእርስዎ ስራ ፈላጊ</p>
-    </header>
-    
-    <nav>
-        <span id="countdown">5</span>
-    </nav>
+  <header>
+    <h1>Beacon Ethiopia</h1>
+  </header>
 
+  <button id="nav-toggle"><i class="fas fa-bars"></i></button>
+  
+  <nav>
+    <ul>
+      <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="/about"><i class="fas fa-info-circle"></i> About Us</a></li>
+      <li><a href="/contact"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li><hr></li>
+      <li><h3 style="color: white; margin: 10px 0;">Articles</h3></li>
+      <li><a href="#article-1"><i class="fas fa-chevron-right"></i> Top 10 Job Searching Websites In Ethiopia</a></li>
+      <li><a href="#article-2"><i class="fas fa-chevron-right"></i> Writing a Compelling CV</a></li>
+      <li><a href="#article-3"><i class="fas fa-chevron-right"></i> The Art of Networking in the Digital Age</a></li>
+      <li><a href="#article-4"><i class="fas fa-chevron-right"></i> Building a Portfolio </a></li>
+      <li><a href="#article-5"><i class="fas fa-chevron-right"></i> Navigating The Job Search</a></li>
+      <li><a href="#article-6"><i class="fas fa-chevron-right"></i> How to Prepare for a Job Interview</a></li>
+      <li><a href="#article-7"><i class="fas fa-chevron-right"></i>Mastering Career Transitions: Strategies and Pitfalls</a></li>
+    </ul>
+  </nav>
+
+  <div class="content-wrapper">
     <main>
-        <article class="post">
-            <h2>5 Strategies to Make Your Resume Stand Out</h2>
-			<p>Developing Your Resume Writing Skills: Advice for a Strong CV
-			The first impression you make on a competitive job market is with your CV. Your CV must be more than just a list of jobs and abilities if you want to really stand out to recruiters and land that coveted interview. It need to be a well-crafted, captivating story that emphasizes your accomplishments and strong points. Here's how to polish your resume so that it stands out:</p>
+      <article id="article-1" class="post">
+        <div class="post-content">
+          <h2>Top 10 Job Searching Websites In Ethiopia </h2>
+          <div class="post-meta">
+            <span class="date"><i class="far fa-calendar-alt"></i> June 15, 2023</span>
+            <span class="tags">
+              <span class="tag">Skills</span>
+              <span class="tag">Career Growth</span>
+            </span>
+          </div>
+          <div class="post-excerpt">
+            <p>Finding employment in Ethiopia has become increasingly reliant on digital platforms. This article highlights the top 10 websites essential for job seekers in . </p>
            
-            <div class="hidden-content">
-                <p><h3>1. Tailor Your Resume to the Job Description</h3>Make sure your resume is appropriate for the position.
-Resumes that are tailored to a single applicant are obsolete. You must tailor your resume to each job you apply for if you want to stand out. Start by going over the job description in detail and noting the most important duties and requirements. Compare and contrast these with your experience and abilities, highlighting the ways in which your background meets the requirements of the business. This focused approach indicates that you've done your research and that you genuinely care about the position.</p>
-            <p><h3>2. Employ Action Verbs to Explain Your Success</h3>
-Action verbs are strong writing instruments that give your CV vitality. Words that imply vigor and initiative include "led," "developed," "achieved," and "optimized." Make an impact and convey your accomplishments with these exciting verbs rather of just listing your work duties. For instance, use the phrase "Led a team of 10 to achieve a 20% increase in productivity" rather than "Responsible for managing a team." This strategy not only draws attention to your accomplishments but also demonstrates your proactive nature.</p>
-			<p><h3>3.Quantify Your Accomplishments with Data</h3>
-						Words are not as loud as numbers. Measuring your accomplishments gives you hard data on your abilities and output. Provide measurements whenever you can to show the breadth and depth of your contributions. For example, "30% increase in sales over a six-month period" or "50,000 annual reduction in operating costs." Data-driven bullet points draw attention and strengthen your resume's persuasiveness by quantifying your influence.</p>
-			<p><h3>4. Add Useful Keywords to Optimize Your ATS</h3>
-				Many firms use Applicant Tracking Systems (ATS) to filter resumes before they are seen by human eyes. Include pertinent keywords from the job description on your CV to make sure it gets past these automated filters. These terms frequently have to do with certain abilities, credentials, or business lingo. Including them organically in your resume improves its chances of passing the applicant tracking system and gets it seen by recruiters</p></h3></p>
-			<p><h3>5. Produce a Professional, Clear Design</h3>
-The layout and appearance of your CV should be equally professional. Recruiters can locate the information they need more quickly in a neat, ordered manner. To make sure your writing is readable, use bullet points, clear headings, and consistent formatting. Steer clear of excessively colorful and elaborate fonts. A well-designed CV not only makes it easier to read, but it also shows that you have thought through every element and that you value the hiring process.
-</p>
-			<p><h3>Combining Everything</h3>
-Creating a CV that stands out requires more than just stating your prior employment. You may develop an appealing CV that effectively highlights your worth by customizing it to each job description, quantifying your accomplishments, utilizing action verbs to highlight them, incorporating pertinent keywords, and keeping a clean design. Keep in mind that your resume is a marketing tool, so make the most impactful use of it when telling your career story.<p>
-			</div>
-            <span class="cta-button" onclick="toggleContent(this)">Read More</span>
-        </article>
+          </div>
+          <a href="/article/Top_10_ Job_ Searching_Websites_ In_ Ethiopia.html" class="btn">Read More</a>
+        </div>
+      </article>
+      
+      <article id="article-2" class="post">
+        <div class="post-content">
+          <h2>5 Strategies to Make Your CV Stand Out for the Ethiopian Job Market</h2>
+          <div class="post-meta">
+            <span class="date"><i class="far fa-calendar-alt"></i> June 10, 2023</span>
+            <span class="tags">
+              <span class="tag">CV Writing</span>
+              <span class="tag">Job Search</span>
+            </span>
+          </div>
+          <div class="post-excerpt">
+            <p>Your CV is often the first impression you make on potential employers. Learn how to craft a CV that stands out and showcases your skills effectively in the Ethiopian context.</p>
+          </div>
+          <a href="*/article/5_Strategies_to_Make_Your_Resume_Stand_Out.html" class="btn">Read More</a>
+        </div>
+      </article>
 
-        <article class="post">
-            <h2>Building a Portfolio That Showcases Your Skills</h2>
-            <p>Whether you're a designer, writer, or developer, a well-crafted portfolio can be your ticket to landing your dream job. Learn how to create a portfolio that effectively demonstrates your expertise and catches the attention of potential employers.</p>
-            <div class="hidden-content">
-             
-    <p><h3>1. Define Your Purpose and Audience</h3>
-    Before you start building your portfolio, it’s important to define its purpose and target audience. Are you applying for a specific job, seeking freelance opportunities, or showcasing your work for potential clients? Understanding your goal will help you tailor your portfolio to meet the expectations of your audience. For instance, a portfolio aimed at potential employers might emphasize your versatility and range of skills, while one for clients might focus on case studies and client testimonials.</p>
-    
-    <p><h3>2. Select Your Best Work</h3>
-    Quality over quantity is key when it comes to portfolio selection. Choose work that best represents your skills and achievements. Highlight projects that showcase your ability to solve problems, innovate, and deliver results. For each piece, provide context by explaining the challenge, your approach, and the outcome. This not only demonstrates your capabilities but also gives potential employers insight into your thought process and problem-solving skills.</p>
-    
-    <p><h3>3. Create a Clean, User-Friendly Design</h3>
-    Your portfolio should be as polished and professional as the work it showcases. Opt for a clean, intuitive design that makes it easy for visitors to navigate and find the information they need. Avoid cluttered layouts, excessive text, and distracting elements. A well-organized portfolio with clear headings, concise descriptions, and high-quality visuals will create a positive impression and ensure that your work takes center stage.</p>
-    
-    <p><h3>4. Include Case Studies and Testimonials</h3>
-    To add depth to your portfolio, include detailed case studies of select projects. Outline the project’s objectives, your role, and the results you achieved. This approach provides potential employers with a comprehensive understanding of your skills and how you apply them to real-world challenges. Additionally, if you have positive testimonials from clients or colleagues, feature them prominently. Testimonials add credibility and can significantly enhance your portfolio’s impact.</p>
-    
-    <p><h3>5. Showcase Your Range and Specialization</h3>
-    While it’s important to highlight your best work, it’s also valuable to showcase a range of projects that demonstrate your versatility. Include examples that reflect different skills and styles to show your adaptability. However, if you have a specific specialization or niche, make sure to emphasize this as well. For instance, if you’re a web developer with a focus on e-commerce sites, highlight projects that align with this specialty.</p>
-    
-    <p><h3>6. Keep It Updated</h3>
-    A portfolio is a living document that should evolve with your career. Regularly update it with new projects, skills, and achievements. Remove outdated or less relevant work to keep your portfolio fresh and aligned with your current expertise. An up-to-date portfolio not only reflects your ongoing growth but also shows that you are actively engaged in your field.</p>
-    
-    <p><h3>7. Make It Accessible</h3>
-    In today’s digital age, your portfolio should be easily accessible online. Create a professional website or use a reputable portfolio platform to host your work. Ensure that your portfolio is mobile-friendly and loads quickly. Providing a link to your portfolio in your resume, cover letter, and professional profiles will make it easier for potential employers and clients to view your work.</p>
-    
-    <p><h3>Putting It All Together</h3>
-    Building a portfolio that effectively showcases your skills requires a thoughtful approach. By defining your purpose, selecting your best work, creating a clean design, including case studies and testimonials, showcasing your range, keeping it updated, and making it accessible, you’ll create a compelling portfolio that captures the attention of potential employers and sets you apart in your field. Remember, your portfolio is a reflection of your professional identity—make it work for you!</p>
-</div>
-
-            </div>
-            <span class="cta-button" onclick="toggleContent(this)">Read More</span>
-        </article>
-
-        <article class="post">
-            <h2>Mastering the Art of Networking in the Digital Age</h2>
+      <article id="article-3" class="post">
+        <div class="post-content">
+          <h2>Mastering the Art of Networking in the Digital Age</h2>
+          <div class="post-meta">
+            <span class="date"><i class="far fa-calendar-alt"></i> June 5, 2023</span>
+            <span class="tags">
+              <span class="tag">Tech Industry</span>
+              <span class="tag">Career Start</span>
+            </span>
+          </div>
+          <div class="post-excerpt">
             <p>Networking remains a crucial aspect of career development, but the landscape has changed. Discover how to leverage social media, online events, and digital platforms to build meaningful professional connections and open new career opportunities.</p>
-            <div class="hidden-content">
-               
-    <p><h3>1. Leverage Social Media Wisely</h3>
-    Social media platforms are powerful tools for professional networking. To make the most of them:
-    <ul>
-        <li><strong>Optimize Your Profiles:</strong> Ensure your profiles on LinkedIn, Twitter, and other relevant platforms are complete and professional. Use a high-quality photo, write a compelling headline, and clearly outline your skills and experiences.</li>
-        <li><strong>Engage Actively:</strong> Share industry-related content, participate in discussions, and comment on posts from thought leaders and peers. This active engagement helps you stay visible and demonstrates your expertise.</li>
-        <li><strong>Connect Strategically:</strong> Reach out to professionals in your industry, join relevant groups, and follow companies of interest. Personalize your connection requests with a brief, thoughtful message explaining why you want to connect.</li>
-    </ul></p>
-    
-    <p><h3>2. Attend Online Events and Webinars</h3>
-    Virtual events have become a staple in the digital networking landscape. Here’s how to make the most of them:
-    <ul>
-        <li><strong>Choose Relevant Events:</strong> Select online events, webinars, and conferences that align with your career goals and interests. Look for those hosted by industry leaders or featuring prominent speakers.</li>
-        <li><strong>Participate Actively:</strong> Engage during sessions by asking questions, participating in polls, and contributing to discussions. This active participation can help you stand out and make a lasting impression.</li>
-        <li><strong>Follow Up:</strong> After the event, connect with speakers and attendees you interacted with. Send a personalized follow-up message to express your appreciation and continue the conversation.</li>
-    </ul></p>
-    
-    <p><h3>3. Utilize Digital Platforms for Professional Growth</h3>
-    There are various digital platforms designed to enhance professional networking and development:
-    <ul>
-        <li><strong>Professional Networking Sites:</strong> Platforms like LinkedIn offer opportunities to connect with industry peers, join professional groups, and access job postings. Regularly update your profile and engage with content to maximize your presence.</li>
-        <li><strong>Industry-Specific Forums:</strong> Participate in forums and communities related to your field. These platforms often provide valuable insights, networking opportunities, and potential collaborations.</li>
-        <li><strong>Online Learning Platforms:</strong> Engage with platforms that offer courses and certifications in your industry. Many of these platforms have community features where you can connect with fellow learners and industry experts.</li>
-    </ul></p>
-    
-    <p><h3>4. Build a Personal Brand</h3>
-    In the digital age, building a strong personal brand is crucial for effective networking:
-    <ul>
-        <li><strong>Create Valuable Content:</strong> Share your insights, experiences, and expertise through blogs, articles, or social media posts. Providing valuable content positions you as a thought leader in your field.</li>
-        <li><strong>Showcase Your Achievements:</strong> Highlight your accomplishments, projects, and skills on your digital profiles. This not only enhances your credibility but also attracts potential connections and opportunities.</li>
-        <li><strong>Be Consistent:</strong> Maintain a consistent presence across your digital platforms. Your online persona should reflect your professional values and goals.</li>
-    </ul></p>
-    
-    <p><h3>5. Nurture and Maintain Connections</h3>
-    Building connections is just the beginning; nurturing them is key to a successful network:
-    <ul>
-        <li><strong>Regular Check-Ins:</strong> Stay in touch with your connections by sending occasional updates, congratulating them on their achievements, or sharing relevant information.</li>
-        <li><strong>Offer Support:</strong> Be willing to help others in your network by offering advice, resources, or introductions. Building a reputation as a supportive and helpful professional strengthens your relationships.</li>
-        <li><strong>Attend Both Virtual and In-Person Events:</strong> Whenever possible, participate in both virtual and in-person networking events. In-person interactions can add a personal touch to your digital connections.</li>
-    </ul></p>
-    
-    <p><h3>Putting It All Together</h3>
-    Mastering the art of networking in the digital age requires a strategic approach. By leveraging social media, attending online events, utilizing digital platforms, building a strong personal brand, and nurturing your connections, you can create a robust professional network that opens doors to new opportunities. Embrace the digital tools at your disposal and stay proactive in building and maintaining meaningful professional relationships.</p>
-</div>
+          </div>
+          <a href="*/article/Mastering-the-Art-of-Networking-in-the-Digital-Age.html" class="btn">Read More</a>
+        </div>
+      </article>
 
-            </div>
-            <span class="cta-button" onclick="toggleContent(this)">Read More</span>
-        </article>
+      <article id="article-4" class="post">
+        <div class="post-content">
+          <h2> Building a Portfolio That Showcases Your Skills</h2>
+          <div class="post-meta">
+            <span class="date"><i class="far fa-calendar-alt"></i> May 30, 2023</span>
+            <span class="tags">
+              <span class="tag">Portfolio</span>
+              <span class="tag">cv</span>
+            </span>
+          </div>
+          <div class="post-excerpt">
+            <p>Before you start building your portfolio, it’s important to define its purpose and target audience. Are you applying for a specific job, seeking freelance opportunities, or showcasing your work for potential clients? Understanding your goal will help you tailor your portfolio to meet the expectations</p>
+          </div>
+          <a href="*/article/Building-a-Portfolio-That-Showcases-Your-Skills.html" class="btn">Read More</a>
+        </div>
+      </article>
 
-        <article class="post">
-            <h2>Navigating the Modern Job Search: Tips and Tricks</h2>
-            <p>The job search process has evolved significantly in recent years. From AI-powered applicant tracking systems to video interviews, job seekers need to adapt to new technologies and strategies. Here are some essential tips for conducting an effective job search in today's digital landscape:</p>
-            <ul>
-                <li>Optimize your online presence, especially on LinkedIn</li>
-                <li>Use job search engines and company websites efficiently</li>
-                <li>Prepare for virtual interviews and assessments</li>
-                <li>Follow up strategically after applying and interviewing</li>
-                <li>Consider freelance and remote opportunities</li>
-            </ul>
-            <div class="hidden-content">
-              
-    <p><h3>1. Optimize Your Online Presence, Especially on LinkedIn</h3>
-    In the modern job market, your online presence plays a crucial role in attracting potential employers. LinkedIn, in particular, is a powerful tool for professional networking and job searching. To optimize your LinkedIn profile:
-    <ul>
-        <li><strong>Complete Your Profile:</strong> Ensure your profile is fully updated with your most recent experiences, skills, and accomplishments. Use a professional photo and write a compelling headline that clearly states your expertise and career goals.</li>
-        <li><strong>Highlight Key Skills and Achievements:</strong> List relevant skills and showcase your accomplishments with quantifiable results. This helps recruiters understand your strengths and how you can add value to their organization.</li>
-        <li><strong>Network Actively:</strong> Connect with industry professionals, join relevant groups, and engage with content. Participate in discussions and share insights to increase your visibility and demonstrate your expertise.</li>
-    </ul></p>
-    
-    <p><h3>2. Use Job Search Engines and Company Websites Efficiently</h3>
-    Job search engines and company websites are invaluable resources for finding job opportunities. To use these tools effectively:
-    <ul>
-        <li><strong>Leverage Job Search Engines:</strong> Platforms like Indeed, Glassdoor, and ZipRecruiter aggregate job listings from various sources. Use filters to narrow down your search by location, industry, and job type. Set up alerts to receive notifications about new job postings that match your criteria.</li>
-        <li><strong>Explore Company Websites:</strong> Identify companies you’re interested in and visit their career pages regularly. Many companies post job openings exclusively on their websites. Tailor your applications to match the specific requirements of each position.</li>
-    </ul></p>
-    
-    <p><h3>3. Prepare for Virtual Interviews and Assessments</h3>
-    Virtual interviews and assessments have become standard in the job application process. To prepare effectively:
-    <ul>
-        <li><strong>Test Your Technology:</strong> Ensure your computer, camera, and microphone are functioning properly. Choose a quiet, well-lit location for the interview and familiarize yourself with the video conferencing platform being used.</li>
-        <li><strong>Practice Common Questions:</strong> Prepare for common interview questions and practice your responses. Focus on demonstrating your skills, experiences, and how you can contribute to the company.</li>
-        <li><strong>Follow Up on Assessments:</strong> If your application involves online assessments or tests, make sure to complete them thoroughly and on time. Follow up with the recruiter to confirm receipt and express your continued interest in the position.</li>
-    </ul></p>
-    
-    <p><h3>4. Follow Up Strategically After Applying and Interviewing</h3>
-    Following up after submitting your application or completing an interview can help keep you top of mind for recruiters. Here’s how to follow up effectively:
-    <ul>
-        <li><strong>Send a Thank-You Note:</strong> After an interview, send a personalized thank-you email to express your appreciation for the opportunity. Reiterate your enthusiasm for the role and briefly highlight why you’re a great fit.</li>
-        <li><strong>Check In Regularly:</strong> If you haven’t heard back within the timeframe mentioned, follow up with a polite email inquiring about the status of your application. This shows your continued interest and helps you stay informed about the process.</li>
-    </ul></p>
-    
-    <p><h3>5. Consider Freelance and Remote Opportunities</h3>
-    The rise of remote work and freelance positions offers additional avenues for job seekers. To explore these opportunities:
-    <ul>
-        <li><strong>Search Freelance Platforms:</strong> Websites like Upwork, Freelancer, and Fiverr offer a variety of freelance projects across different industries. Create a strong profile and bid on projects that match your skills.</li>
-        <li><strong>Explore Remote Job Boards:</strong> Platforms like Remote.co, We Work Remotely, and FlexJobs specialize in remote job listings. Look for positions that align with your career goals and offer the flexibility you desire.</li>
-    </ul></p>
-    
-    <p><h3>Putting It All Together</h3>
-    Navigating the modern job search requires a strategic approach and adaptability. By optimizing your online presence, using job search engines and company websites efficiently, preparing for virtual interviews, following up strategically, and considering freelance and remote opportunities, you can enhance your job search and increase your chances of landing your desired position. Embrace the digital tools and strategies at your disposal to stay ahead in today’s competitive job market.</p>
-</div>
+      <article id="article-5" class="post">
+        <div class="post-content">
+          <h2>Navigating the Modern Job Search: Tips and Tricks</h2>
+          <div class="post-meta">
+            <span class="date"><i class="far fa-calendar-alt"></i> May 25, 2023</span>
+            <span class="tags">
+              <span class="tag">Digital</span>
+              <span class="tag">Networking</span>
+            </span>
+          </div>
+          <div class="post-excerpt">
+            <p>The job search process has evolved significantly in recent years. From AI-powered applicant tracking systems to video interviews, job seekers need to adapt to new technologies and strategies. Here are some essential tips for conducting an effective job search in today's digital landscape:</p></p>
+          </div>
+          <a href="*/article/Navigating-the-Modern-Job-Search-Tips-and-Tricks.html" class="btn">Read More</a>
+        </div>
+      </article>
 
-            </div>
-            <span class="cta-button" onclick="toggleContent(this)">Read More</span>
-        </article>
+      <article id="article-6" class="post">
+        <div class="post-content">
+          <h2>How to Prepare for a Job Interview: A Comprehensive Guide</h2>
+          <div class="post-meta">
+            <span class="date"><i class="far fa-calendar-alt"></i> May 20, 2023</span>
+            <span class="tags">
+              <span class="tag">Interview</span>
+              <span class="tag">Professional Development</span>
+            </span>
+          </div>
+          <div class="post-excerpt">
+           <p>Preparing for a job interview can be both exciting and nerve-wracking. To ensure you make a great impression and boost your chances of landing the job, thorough preparation is essential. This guide will walk you through the key steps to effectively prepare for a job interview, offering actionable tips and strategies to help you succeed.</p>
+          </div>
+          <a href="*/article/How_to_ Prepare_ for_ a_ Job_ Interview_ A_ Comprehensive_Guide.html" class="btn">Read More</a>
+        </div>
+      </article>
+
+      <article id="article-7" class="post">
+        <div class="post-content">
+          <h2>Mastering Career Transitions: Strategies and Pitfalls</h2>
+          <div class="post-meta">
+            <span class="date"><i class="far fa-calendar-alt"></i> May 15, 2023</span>
+            <span class="tags">
+              <span class="tag">Job search</span>
+              <span class="tag">Transition</span>
+            </span>
+          </div>
+          <div class="post-excerpt">
+            <p>As Ethiopia embraces digital transformation, many careers are evolving. Explore how this shift is changing the job market and how you can prepare for the future of work.</p>
+          </div>
+          <a href="*/article/Mastering_Career_Transitions_Strategies_and_Pitfalls.html" class="btn">Read More</a>
+        </div>
+      </article>
+
+     
     </main>
+    <aside class="ad-banner">
+      <h3>Join Our Telegram Channel!</h3>
+      <p>Stay updated with the latest career opportunities and advice. Get instant notifications directly on your phone!</p>
+      <a href="https://t.me/BeaconEthiopia" class="btn" target="_blank"><i class="fab fa-telegram"></i> Subscribe Now</a>
+	 
+	 
+	 
+	  <div>
+	  <h3>Try Our Telegram Bot!</h3>
+      <p>Stay updated with the latest career opportunities and advice. Get instant notifications directly on your phone!</p>
+      <center> <a   href="https://t.me/BeaconEthiopia" class="btn" target="_blank"><i class="fab fa-telegram"></i> Try</a></center>
+	  
+	  </div>
+    </aside>
+	
+  </div>
+  
+  <footer>
+    <p>&copy; 2023 Beacon Ethiopia. All rights reserved.</p>
+	<a href="/Terms_of_service_and_privacy_policy.html" class="terms-link">Terms of Service</a>
+  </footer>
 
-    <script>
-        function toggleContent(button) {
-            const content = button.previousElementSibling;
-            if (content.classList.contains('hidden-content')) {
-                content.classList.remove('hidden-content');
-                button.innerText = 'Read Less';
-            } else {
-                content.classList.add('hidden-content');
-                button.innerText = 'Read More';
-            }
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const navToggle = document.getElementById('nav-toggle');
+      const nav = document.querySelector('nav');
+
+      navToggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+      });
+
+      // Close nav when clicking outside
+      document.addEventListener('click', (event) => {
+        if (!nav.contains(event.target) && !navToggle.contains(event.target)) {
+          nav.classList.remove('open');
         }
+      });
 
-        function startCountdown() {
-            let countdown = 5;
-            const countdownElement = document.getElementById('countdown');
-            const interval = setInterval(() => {
-                countdown--;
-                countdownElement.innerText = countdown;
-                if (countdown <= 0) {
-                    clearInterval(interval);
-                    countdownElement.innerText = "መልካም ዕድል!";
-                }
-            }, 1000);
+      // Highlight current page in navigation
+      const currentLocation = window.location.pathname;
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentLocation) {
+          link.style.color = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
         }
+      });
 
-        window.onload = function() {
-            startCountdown();
+      // Add a subtle hover effect to post titles
+      const postTitles = document.querySelectorAll('.post h2');
+      postTitles.forEach(title => {
+        title.addEventListener('mouseover', () => {
+          title.style.color = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
+        });
+        title.addEventListener('mouseout', () => {
+          title.style.color = getComputedStyle(document.documentElement).getPropertyValue('--primary-color');
+        });
+      });
 
-            // Initialize the Telegram Web App
-            window.Telegram.WebApp.ready();
-            
-            // Optionally set colors
-            window.Telegram.WebApp.setHeaderColor("#2c3e50");
-            window.Telegram.WebApp.setBackgroundColor("#FFFFFF");
+      // Smooth scroll to article when clicking on nav links
+      const articleLinks = document.querySelectorAll('nav a[href^="#"]');
+      articleLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            nav.classList.remove('open');
+          }
+        });
+      });
 
-            // Optionally expand the Mini App
-            window.Telegram.WebApp.expand();
+      // Add parallax effect to header
+      window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        let scrollPosition = window.pageYOffset;
+        header.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+      });
 
-            // Perform redirection after 6 seconds
-            const urlParams = new URLSearchParams(window.location.search);
-            const redirectUrl = urlParams.get('redirect');
-            if (redirectUrl) {
-                setTimeout(() => {
-                    window.location.href = redirectUrl;
-                }, 6000);
-            }
-        };
+      // Add hover effect for buttons
+      const buttons = document.querySelectorAll('.btn');
+      buttons.forEach(button => {
+        button.addEventListener('mouseover', () => {
+          button.style.transform = 'translateY(-3px) scale(1.05)';
+        });
+        button.addEventListener('mouseout', () => {
+          button.style.transform = 'translateY(0) scale(1)';
+        });
+      });
 
-        // Add a simple dark mode toggle
-        const toggleDarkMode = () => {
-            document.body.classList.toggle('dark-mode');
-        }
+      // Add a cool effect when scrolling
+      const posts = document.querySelectorAll('.post');
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
 
-        // Create a button for dark mode toggle
-        const darkModeButton = document.createElement('button');
-        darkModeButton.innerText = 'Toggle Dark Mode';
-        darkModeButton.style.position = 'fixed';
-        darkModeButton.style.bottom = '20px';
-        darkModeButton.style.right = '20px';
-        darkModeButton.style.padding = '10px';
-        darkModeButton.style.backgroundColor = '#2c3e50';
-        darkModeButton.style.color = '#ecf0f1';
-        darkModeButton.style.border = 'none';
-        darkModeButton.style.borderRadius = '5px';
-        darkModeButton.style.cursor = 'pointer';
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
 
-        darkModeButton.addEventListener('click', toggleDarkMode);
-        document.body.appendChild(darkModeButton);
-
-        // Add dark mode styles
-        const darkModeStyles = `
-            body.dark-mode {
-                background-color: #2c3e50;
-                color: #ecf0f1;
-            }
-            body.dark-mode .post {
-                background-color: #34495e;
-            }
-            body.dark-mode .post h2 {
-                color: #ecf0f1;
-            }
-            body.dark-mode header, body.dark-mode nav, body.dark-mode footer {
-                background-color: #1a252f;
-            }
-        `;
-
-        const styleElement = document.createElement('style');
-        styleElement.textContent = darkModeStyles;
-        document.head.appendChild(styleElement);
-    </script>
-</body>
-</html>
+      posts.forEach(post => {
+        observer.observe(post);
+      });
+    });
+  </script>
+</body></html>

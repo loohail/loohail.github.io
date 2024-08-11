@@ -1,0 +1,582 @@
+<html><head><base href="https://beacon-ethiopia.com/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beacon Ethiopia - Professional Career Advice</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+    --background-color: #ecf0f1;
+    --text-color: #34495e;
+    --card-background: #ffffff;
+    --accent-color: #3498db;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+  }
+
+  * {
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  header {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 1em 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 40%);
+    animation: ripple 15s infinite linear;
+    z-index: 1;
+  }
+
+  @keyframes ripple {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-align: center;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: left 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    z-index: 1000;
+    box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+    overflow-y: auto;
+  }
+
+  nav.open {
+    left: 0;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 70px;
+  }
+
+  nav ul li {
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+  }
+
+  nav ul li a i {
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  nav ul li a:hover {
+    color: var(--secondary-color);
+    transform: translateX(5px);
+  }
+
+  #nav-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+
+  #nav-toggle:hover {
+    background-color: var(--secondary-color);
+    transform: rotate(90deg);
+  }
+
+  .content-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 0 20px;
+    position: relative;
+  }
+
+  main {
+    flex: 1;
+    margin-right: 20px;
+    position: relative;
+  }
+
+  .post {
+    background-color: var(--card-background);
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transform-origin: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .post:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .post-content {
+    padding: 30px;
+  }
+
+  .post h2 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+  }
+
+  .post h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+  }
+
+  .post:hover h2::after {
+    width: 100px;
+  }
+
+  .post-meta {
+    font-size: 0.9em;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  .post-meta .date {
+    margin-right: 15px;
+  }
+
+  .post-excerpt {
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .post-excerpt::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, var(--card-background));
+  }
+
+  .tag {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    margin-right: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+  }
+
+  .btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  .ad-banner {
+    width: 300px;
+    background-color: var(--card-background);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    position: sticky;
+    top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ad-banner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .ad-banner h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+
+  .ad-banner p {
+    margin-bottom: 20px;
+    font-size: 1em;
+  }
+
+  footer {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    text-align: center;
+    padding: 2em;
+    margin-top: 2em;
+    position: relative;
+    overflow: hidden;
+  }
+
+  footer::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 40%);
+    animation: ripple 15s infinite linear;
+    z-index: 1;
+  }
+
+  footer p {
+    position: relative;
+    z-index: 2;
+    font-size: 1em;
+  }
+
+  @media (max-width: 768px) {
+    .content-wrapper {
+      flex-direction: column;
+    }
+
+    .ad-banner {
+      width: 100%;
+      margin-top: 20px;
+      position: static;
+    }
+  }
+
+  /* Cool Animation for Posts */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .post {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+  }
+
+  .post:nth-child(1) { animation-delay: 0.1s; }
+  .post:nth-child(2) { animation-delay: 0.2s; }
+  .post:nth-child(3) { animation-delay: 0.3s; }
+  .post:nth-child(4) { animation-delay: 0.4s; }
+  .post:nth-child(5) { animation-delay: 0.5s; }
+  .post:nth-child(6) { animation-delay: 0.6s; }
+  .post:nth-child(7) { animation-delay: 0.7s; }
+  .post:nth-child(8) { animation-delay: 0.8s; }
+  .post:nth-child(9) { animation-delay: 0.9s; }
+  .post:nth-child(10) { animation-delay: 1s; }
+
+  /* Stylish Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--background-color);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+  }
+
+  /* Cool hover effect for nav items */
+  nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+    z-index: -1;
+  }
+
+  nav ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* Glowing effect for header */
+  @keyframes glow {
+    0% { text-shadow: 0 0 5px rgba(255,255,255,0.5); }
+    50% { text-shadow: 0 0 20px rgba(255,255,255,0.5); }
+    100% { text-shadow: 0 0 5px rgba(255,255,255,0.5); }
+  }
+
+  header h1 {
+    animation: glow 3s infinite;
+  }
+ 
+</style>
+</head>
+<body>
+  <header>
+    <h1>Beacon Ethiopia</h1>
+  </header>
+
+  <button id="nav-toggle"><i class="fas fa-bars"></i></button>
+  
+  <nav>
+    <ul>
+      <li><a href="C:\Users\li\Downloads\website\index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="/about"><i class="fas fa-info-circle"></i> About Us</a></li>
+      <li><a href="/contact"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li><hr></li>
+    </ul>
+  </nav>
+  <div class="content-wrapper">
+    <main>
+  <div class="section">
+  <div class="content-wrapper">
+    <main>
+      <h1>About Beacon Ethiopia</h1>
+      <p>Beacon Ethiopia is a leading career development and job search platform dedicated to empowering Ethiopian professionals and connecting them with exciting career opportunities. Our mission is to bridge the gap between talented individuals and forward-thinking employers, fostering economic growth and professional development across Ethiopia.</p>
+
+      <h2>Our Vision</h2>
+      <p>We envision a future where every Ethiopian professional has access to the resources, guidance, and opportunities they need to build fulfilling careers and contribute to the nation's progress. By leveraging technology and industry expertise, we aim to be the go-to platform for career advancement in Ethiopia.</p>
+
+      <h2>What We Offer</h2>
+      <ul>
+        <li>Comprehensive job listings from top employers across Ethiopia</li>
+        <li>Career advice and resources tailored to the Ethiopian job market</li>
+        <li>Resume building tools and tips</li>
+        <li>Networking opportunities and professional development events</li>
+        <li>Personalized job recommendations based on skills and experience</li>
+      </ul>
+
+      <h2>Our Commitment</h2>
+      <p>At Beacon Ethiopia, we are committed to:</p>
+      <ul>
+        <li>Promoting equal opportunities for all professionals, regardless of background or experience level</li>
+        <li>Continuously improving our platform based on user feedback and market trends</li>
+        <li>Supporting the growth of Ethiopian businesses by connecting them with top talent</li>
+        <li>Providing accurate, up-to-date information and advice to job seekers and employers alike</li>
+        <li>Maintaining the highest standards of privacy and data security for our users</li>
+      </ul>
+
+      <p>Join us in our mission to illuminate career paths and brighten futures across Ethiopia. Whether you're a job seeker looking to take the next step in your career or an employer searching for exceptional talent, Beacon Ethiopia is here to guide you towards success.</p>
+    </main>
+  </div>
+
+
+    </main>
+	
+  </div>
+  
+  <footer>
+    <p>&copy; 2023 Beacon Ethiopia. All rights reserved.</p>
+	
+	<a href="/Terms_of_service_and_privacy_policy.html" class="terms-link">Terms of Service</a>
+
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const navToggle = document.getElementById('nav-toggle');
+      const nav = document.querySelector('nav');
+
+      navToggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+      });
+
+      // Close nav when clicking outside
+      document.addEventListener('click', (event) => {
+        if (!nav.contains(event.target) && !navToggle.contains(event.target)) {
+          nav.classList.remove('open');
+        }
+      });
+
+      // Highlight current page in navigation
+      const currentLocation = window.location.pathname;
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentLocation) {
+          link.style.color = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
+        }
+      });
+
+      // Add a subtle hover effect to post titles
+      const postTitles = document.querySelectorAll('.post h2');
+      postTitles.forEach(title => {
+        title.addEventListener('mouseover', () => {
+          title.style.color = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
+        });
+        title.addEventListener('mouseout', () => {
+          title.style.color = getComputedStyle(document.documentElement).getPropertyValue('--primary-color');
+        });
+      });
+
+      // Smooth scroll to article when clicking on nav links
+      const articleLinks = document.querySelectorAll('nav a[href^="#"]');
+      articleLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            nav.classList.remove('open');
+          }
+        });
+      });
+
+      // Add parallax effect to header
+      window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        let scrollPosition = window.pageYOffset;
+        header.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+      });
+
+      // Add hover effect for buttons
+      const buttons = document.querySelectorAll('.btn');
+      buttons.forEach(button => {
+        button.addEventListener('mouseover', () => {
+          button.style.transform = 'translateY(-3px) scale(1.05)';
+        });
+        button.addEventListener('mouseout', () => {
+          button.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+
+      // Add a cool effect when scrolling
+      const posts = document.querySelectorAll('.post');
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      posts.forEach(post => {
+        observer.observe(post);
+      });
+    });
+  </script>
+</body></html>
